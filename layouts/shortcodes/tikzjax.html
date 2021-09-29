@@ -1,0 +1,5 @@
+<div {{ if not ( .Get "no-darkmode" ) }}class="tikz"{{ end }}>
+    <script type="text/tikz">
+        {{ .Inner }}
+    </script>
+</div>

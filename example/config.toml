@@ -1,0 +1,7 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "example"
+theme = "hugo-theme-tex"
+sectionPagesMenu = "main"
+[params]
+    darkMode = true

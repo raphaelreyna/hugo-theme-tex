@@ -1,0 +1,37 @@
+html, body {
+  color: #cdd9e5;
+  background-color: #1c2128;
+}
+
+html *:not(input) {
+  color: #cdd9e5 !important;
+}
+
+a[ping]:link,
+:link:not(cite) {
+  color: #4184e4 !important;
+}
+
+html a:visited {
+  color: #4184e4 !important;
+}
+
+html cite,
+html cite a:link,
+html cite a:visited {
+  color: #4184e4 !important;
+}
+
+.tikz {
+  filter: invert(1);
+}
+
+/* inline styles */
+[style*='background: #'], [style*='background:#'],
+[style*='background: rgb'], [style*='background:rgb'],
+[style*='background: var('], [style*='background:var('],
+[style*='background-color: #'], [style*='background-color:#'],
+[style*='background-color: rgb'], [style*='background-color:rgb'],
+[style*='background-color: var('], [style*='background-color:var('] {
+  background-color: #1c2128 !important;
+}

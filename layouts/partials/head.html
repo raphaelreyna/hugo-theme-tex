@@ -1,0 +1,43 @@
+<meta charset="utf-8" />
+{{ if .Title }}
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ else }}
+  <title>{{ .Site.Title }}</title>
+{{ end }}
+{{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}" />
+{{ end }}
+{{- with .Site.Author.Name }}
+  <meta name="author" content="{{ . }}"/>
+{{- end }}
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/latex.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
+{{ if .Site.Params.darkMode }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/darkmode.css" />
+{{ end }}
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ hugo.Generator -}}
+
+{{- if or (.HasShortcode "mathjax/block") (.HasShortcode "mathjax/inline") -}}
+<script>
+window.MathJax = {
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady().then(() => {
+        for (let element of document.getElementsByClassName("has-mathjax")) {
+            element.style.visibility = "visible"
+        }
+      });
+    }
+  }
+};
+</script>
+{{- end -}}
+
+{{- if .HasShortcode "tikzjax" -}}
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+{{- end -}}
+
