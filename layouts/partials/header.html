@@ -11,7 +11,6 @@
 {{ $title := $.Scratch.Get "title" }}
 {{ if $title }}
 <header>
-  {{ partial "nav.html" . }}
   <div class="intro-header">
     <div class="container">
       <div class="{{ .Type }}-heading">
@@ -39,11 +38,3 @@
 {{ else }}
 <div class="intro-header"></div>
 {{ end }}
-
-<nav class="sidebar-nav">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-    {{ end }}
-</nav>
-

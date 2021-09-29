@@ -2,10 +2,15 @@
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
+        <section class="main-content columns is-fullheight">
+            {{- partial "sideNav.html" . -}}
+            <div class="container column is-10">
+                {{- partial "header.html" . -}}
+                <div id="content">
+                {{- block "main" . }}{{- end }}
+                </div>
+            </div>
+        </section>
         {{- partial "footer.html" . -}}
     </body>
 </html>

@@ -25,3 +25,7 @@ footer .theme-by {
   float: right;
   display: block;
 }
+
+.container {
+  margin: 0;
+}

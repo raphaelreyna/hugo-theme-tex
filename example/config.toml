@@ -2,6 +2,9 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "example"
 theme = "hugo-theme-tex"
-sectionPagesMenu = "main"
 [params]
     darkMode = true
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true

@@ -1,0 +1,14 @@
+<aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+    {{ $currentPage := . }}
+    {{ range $key, $value := .Site.Menus }}
+        <p class="menu-label is-hidden-touch">{{ $key }}</p>
+        <ul class="menu-list">
+        {{ range $value }}
+            <li>
+                <a href="{{ .URL }}" class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} is-active{{end}}" title="{{ .Title }}">{{ .Name }}</a>
+                </a>
+            </li>
+        {{ end }}
+        </ul>
+    {{ end }}
+</aside>
