@@ -19,6 +19,10 @@ For \(a \in A\)
 Inline shortcode {{< mathjax/inline >}}\(a \ne 0\){{< /mathjax/inline >}} with
 Mathjax.{{< sidenote >}}This a sidenote example{{< /sidenote >}}
 
+{{< definition >}}
+Some definition of some really interesting thing.
+{{< /definition >}}
+
 # Tikzjax block
 ---
 
